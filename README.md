@@ -21,7 +21,19 @@ The goal of this project is to classify images as either "Real" or "Fake" based 
 ## Detailed Descriptions
 
 ### Data Preprocessing Pipeline
-_Add description here once provided_
+Le script de division du dataset organise les images en ensembles d'entraînement (training) et de test (testing) en fonction d'un ratio spécifié (par défaut, 80 % pour l'entraînement et 20 % pour le test). Ce processus permet de créer des ensembles équilibrés et séparés pour l'entraînement et l'évaluation du modèle.
+
+- **Chemins des dossiers d'origine** : Ce script prend les dossiers d'images d'origine, contenant des images étiquetées comme "réelles" (`real_dir`) et "fausses" (`fake_dir`), et les divise en deux ensembles : entraînement et test.
+  
+- **Création des dossiers** : Le script crée des sous-dossiers spécifiques pour chaque catégorie (`fake_training`, `real_training`, `fake_testing`, `real_testing`) dans les répertoires `training` et `testing`.
+
+- **Fonction `split_data`** : Cette fonction divise les images dans les ensembles d'entraînement et de test en fonction d'un ratio (`split_ratio`) :
+  - **Mélange des images** : Les images sont mélangées aléatoirement pour garantir une distribution équilibrée.
+  - **Division et copie des fichiers** : Les images sont ensuite copiées dans les dossiers de destination (`train_dest` et `test_dest`) pour les ensembles d'entraînement et de test respectivement.
+
+- **Exécution de la division** : La fonction `split_data` est appelée pour chaque catégorie (réelle et fausse), permettant ainsi de diviser le dataset en deux ensembles finaux.
+
+Après exécution, le script organise le dataset en dossiers de `training` et `testing` prêts à être utilisés pour l’entraînement et l’évaluation du modèle.
 
 ### Model Configuration Pipeline
 _Add description here once provided_
