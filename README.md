@@ -1,7 +1,3 @@
-Voici un modèle de `README.md` qui décrit votre projet en utilisant les codes fournis et inclut des instructions pour les utilisateurs souhaitant accéder à votre modèle sur Kaggle et l'utiliser dans une application Streamlit :
-
----
-
 # Détection de Visages Réels et Générés par IA
 
 Ce projet utilise un modèle de classification basé sur `EfficientNet-B0` pour distinguer les visages réels des visages générés par IA. Le modèle a été formé à l'aide de données augmentées pour optimiser sa performance. Le code complet pour la préparation, l'entraînement, et la validation est disponible sur Kaggle, avec le modèle entraîné sauvegardé en tant que fichier `.pth`. 
