@@ -11,7 +11,7 @@ Les utilisateurs peuvent également utiliser ce modèle dans une application Str
 ## Accéder au Modèle sur Kaggle
 
 Pour accéder au modèle pré-entraîné sur Kaggle :
-1. Visitez le lien vers le Kaggle Notebook : `[Lien vers le Notebook Kaggle]`
+1. Visitez le lien vers le Kaggle Notebook : `[https://www.kaggle.com/code/trabelsiaya/deep-fake/edit]`
 2. Téléchargez le fichier `best_model.pth` généré par le code dans la section Entraînement.
 
 ## Structure du Projet
@@ -37,7 +37,7 @@ Après exécution, le script organise le dataset en dossiers de training et test
 
 
 #### Redimensionnement des Images
-Ce script redimensionne toutes les images du dataset en une résolution de 224x224 pixels, ce qui est nécessaire pour garantir la compatibilité avec le modèle EfficientNet-B0 utilisé pour la classification. Le redimensionnement améliore également la cohérence des données en entrée du modèle.
+Le script redimensionne toutes les images du dataset en une résolution de 224x224 pixels, ce qui est nécessaire pour garantir la compatibilité avec le modèle EfficientNet-B0 utilisé pour la classification. Le redimensionnement améliore également la cohérence des données en entrée du modèle.
 
 Dossiers d'origine : Ce script traite quatre dossiers principaux contenant les images de chaque catégorie (fake_training, fake_testing, real_training, real_testing) dans les répertoires training et testing.
 
@@ -52,7 +52,7 @@ Une fois le script terminé, toutes les images du dataset sont uniformément red
 Le dataset est redimensionné pour que toutes les images soient de 224x224 pixels, conforme aux exigences du modèle `EfficientNet-B0`.
 
 #### Augmentation des Données
-Ce script augmente le dataset d'entraînement en appliquant deux types de transformations aléatoires sur les images originales : un flip horizontal et un ajustement de couleur (Color Jitter). L'objectif de cette étape est de créer des variations dans les données afin de rendre le modèle plus robuste et d'atténuer le surapprentissage.
+Le script augmente le dataset d'entraînement en appliquant deux types de transformations aléatoires sur les images originales : un flip horizontal et un ajustement de couleur (Color Jitter). L'objectif de cette étape est de créer des variations dans les données afin de rendre le modèle plus robuste et d'atténuer le surapprentissage.
 
 Dossiers de training : Ce script cible spécifiquement les dossiers de données d'entraînement (fake_training et real_training).
 
@@ -69,7 +69,7 @@ Après l'exécution de ce script, chaque catégorie d'entraînement contient 100
 
 
 ### 2. Pipeline de Prétraitement et de Labelisation
-Ce script prépare les données d'images pour l'entraînement en appliquant un prétraitement standard et en affectant des étiquettes aux images selon leur catégorie (réel ou faux). Le pipeline facilite le chargement et la transformation des données en utilisant PyTorch.
+Le script prépare les données d'images pour l'entraînement en appliquant un prétraitement standard et en affectant des étiquettes aux images selon leur catégorie (réel ou faux). Le pipeline facilite le chargement et la transformation des données en utilisant PyTorch.
 
 Classe FaceDataset :
 
@@ -86,7 +86,7 @@ Concaténation et DataLoader : Les datasets pour les images "réelles" et "fauss
 Une fois ce pipeline exécuté, les images du dataset sont prêtes à être chargées et traitées de manière cohérente pour l’entraînement du modèle.
 
 ### 3. Configuration du Modèle
-Ce code permet de tester le DataLoader créé par la pipeline de prétraitement et de labélisation. Il vérifie que les images sont correctement chargées avec les étiquettes correctes, ce qui est essentiel pour garantir que le modèle s'entraîne sur des données bien préparées.
+Le code permet de tester le DataLoader créé par la pipeline de prétraitement et de labélisation. Il vérifie que les images sont correctement chargées avec les étiquettes correctes, ce qui est essentiel pour garantir que le modèle s'entraîne sur des données bien préparées.
 
 Chargement des Données : Le DataLoader est configuré avec la fonction data_preprocessing_pipeline, qui prend en entrée les dossiers de données d’entraînement pour les images "réelles" et "fausses" et crée des lots (batches) de taille spécifiée (batch_size=8).
 
